@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo</title>
+    <!-- CSS only -->
+    <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+    crossorigin="anonymous">
+</head>
+<body class="m-5 bg-dark">
+      <div class="container">
+          <div class="row justify-content-center">  
+            <div class="col-2">
+                <a href="{% url 'gallery' %}" class="btn btn-info btn-sm my-3">Go back</a>
+            </div>
+            <div class="col-md-5">
+                <div style="height: 90vh;">
+                    <img style="max-width: 100%; max-height: 100%; border: 3px solid black;" src="{{photo.image.url}}" alt="{{photo.description}}">
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="m-5">
+                    <a href="{% url 'delete' photo.id %}" title="delete"><i class="fas fa-trash-alt ico text-white fa-2x"></i></a>
+                 <strong class="display-8 blockquote-footer lead"><em>{{photo.description}}</em></strong></div>
+            </div>
+          </div>
+      </div>
+</body>
+</html>

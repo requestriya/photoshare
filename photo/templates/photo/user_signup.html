@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+    crossorigin="anonymous">
+    <style>
+        body{
+            background-image: url(/static/images/BG1.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+    </style>
+</head>
+<body class="m-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                 <h4 class="my-2 text-center"><img src="{% static 'images/photocloud.svg' %}"></h4>
+                     <h1 class="card-title text-center my-2 text-dark">Create an Account</h1>
+                     <div class="card-body m-3">
+                         <form action="" method="POST" novalidate>
+                             {% csrf_token %}
+                             {% for forms in form %}
+                             <div class="form-group">
+                                {{forms.label_tag}}
+                                {{forms}} 
+                                <h6 class="text-danger my-2">{{forms.errors|striptags}} </h6>
+                             </div>
+                              {% endfor %}
+                              <h6 class="text-black my-2"> Already have an account? <a href="{% url 'homepage' %}">Login</a></h6>
+                              <input type="submit" value="Submit" class="btn btn-dark">
+                        </form>
+                </div>
+             
+             </div>
+        </div>
+    </div>
+</body>
+</html>
