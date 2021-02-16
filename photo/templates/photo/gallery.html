@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,14 +38,14 @@
         }
         }
         body{
-            background-image: url(/static/images/untitled.svg);
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
+            height: 90vh;
         }
     </style>
 </head>
-<body class="m-5">
+<body class="m-5" style="background-image: url(/static/images/Untitled.svg);">
   
     <div class="container">
       <div class="row">
@@ -89,8 +90,7 @@
                           </div>
                     </div>
                     {% empty %}
-                    
-                    {% include 'photo/photoshare.svg' %}
+                    <div class="mt-5">{% include 'photo/photoshare.svg' %}</div>
                     {% endfor %}
                 </div>
 

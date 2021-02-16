@@ -10,19 +10,18 @@
     crossorigin="anonymous">
     <style>
         body{
-            background-image: url(/static/images/BG1.svg);
             background-repeat: no-repeat;
             background-size: cover;
-            
+            height: 90vh;
         }
     </style>
 </head>
-<body>
+<body style="background-image: url('{% static 'photo/images/BG1.svg' %}');">
    <div class="container mt-5">
        <div class="row justify-content-center">
            <div class="col-md-5">
             <div class="card m-3">
-            <h4 class="text-center"><img src="{% static 'images/photocloud.svg' %}"></h4>
+            <h4 class="text-center"><img src="{% static 'photo/images/photocloud.svg' %}"></h4>
              <h4 class="card-subtitle text-center">Welcome back!</h4>
              <h5 class="card-title my-2 text-info text-center">Login to Your Account</h5>
                <div class="card-body m-3">
