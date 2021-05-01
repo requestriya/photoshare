@@ -8,43 +8,55 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
     crossorigin="anonymous">
+    <style>
+      body{
+          background: #FD965D;
+      }
+      .card, .btn{
+    filter: drop-shadow(0px 5px 3px rgb(14, 14, 13));
+}
+  </style>
 </head>
-<body class="m-5 bg-dark">
+<body>
 
-    <div class="container text-white">
+    <div class="container my-5 text-dark">
         <div class="row justify-content-center">
             <div class="col-md-5">
                 <a href="{% url 'gallery' %}" class="btn btn-info btn-sm my-3">Go back</a>
-                <form method="POST" action="" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="form-group m-3">
-                        <label>Description</label>
-                        <input required name="description" type="text" placeholder="Enter a description" class="form-control">
-                      </div>
-
+                <div class="card">
+                  <div class="card-body my-2">
+                    <form method="POST" action="" enctype="multipart/form-data">
+                      {% csrf_token %}
                       <div class="form-group m-3">
-                        <label>Select a category</label>
-                        <select name="category" class="form-control"> 
-                            <option value="none">select a category...</option>
-                            {% for category in categories %}
-                            <option value="{{category.id}}">{{category.name}}</option>
-                            {% endfor %}
-                        </select>
-                      </div>
-
+                          <label><strong>Description</strong></label>
+                          <input required name="description" type="text" placeholder="Enter a description" class="form-control">
+                        </div>
+  
+                        <div class="form-group m-3">
+                          <label><strong>Select a category</strong></label>
+                          <select name="category" class="form-control"> 
+                              <option value="none">select a category...</option>
+                              {% for category in categories %}
+                              <option value="{{category.id}}"><strong>{{category.name}}</strong></option>
+                              {% endfor %}
+                          </select>
+                        </div>
+  
+                        <div class="form-group m-3">
+                          <label><strong>Create a new category</strong></label>
+                          <input name="category_new" type="text" placeholder="Create a new category" class="form-control">
+                        </div>
+  
+  
                       <div class="form-group m-3">
-                        <label>Create a new category</label>
-                        <input name="category_new" type="text" placeholder="Create a new category" class="form-control">
+                        <label><strong>Upload Image</strong></label>
+                        <input  required name="image" type="file" class="form-control-file">
                       </div>
-
-
-                    <div class="form-group m-3">
-                      <label>Upload Image</label>
-                      <input  required name="image" type="file" class="form-control-file">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary m-3">Submit</button>
-                  </form>
+  
+                      <button type="submit" class="btn btn-primary m-3">Submit</button>
+                    </form>
+                  </div>
+                </div>
             </div>
         </div>
     </div>

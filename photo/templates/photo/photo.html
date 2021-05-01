@@ -9,9 +9,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
     crossorigin="anonymous">
+    <style>
+        body{
+            background: #FD965D;
+        }
+        .btn{
+    filter: drop-shadow(0px 5px 3px rgb(14, 14, 13));
+}
+    </style>
 </head>
-<body class="m-5 bg-dark">
-      <div class="container">
+<body>
+      <div class="container my-5">
           <div class="row justify-content-center">  
             <div class="col-2">
                 <a href="{% url 'gallery' %}" class="btn btn-info btn-sm my-3">Go back</a>
@@ -24,7 +32,7 @@
             <div class="col-md-5">
                 <div class="m-5">
                     <a href="{% url 'delete' photo.id %}" title="delete"><i class="fas fa-trash-alt ico text-white fa-2x"></i></a>
-                 <strong class="display-8 blockquote-footer lead"><em>{{photo.description}}</em></strong></div>
+                 <strong class="text-black"><em>-{{photo.description}}</em></strong></div>
             </div>
           </div>
       </div>

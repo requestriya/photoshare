@@ -3,6 +3,10 @@ from .models import Category, Photo
 from .forms import LoginForm, SignUpForm, EditUserChangeForm
 from django.contrib.auth import authenticate, login, logout
 # Create your views here.
+def homepage(request):
+    return render(request, 'photo/home.html')
+
+
 def home(request):
     if not request.user.is_authenticated:
         if request.method == 'POST':

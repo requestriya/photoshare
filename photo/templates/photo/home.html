@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoCloud Home</title>
+    <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css>
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css>
+</head>
+<body>
+
+<style>
+    body{
+        background: #6DA2F2;
+    }
+    .btn{
+    filter: drop-shadow(0px 5px 3px rgb(14, 14, 13));
+}
+.content h1 {
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 75px;
+  color: #021718;
+  margin-bottom: 24px;
+}
+.content p {
+  font-size: 24px;
+  line-height: 42px;
+  color: #021718;
+}
+@media only screen and (max-width: 767px){
+.container-fluid{
+    margin-top: 0;
+}
+.image > img{
+    width: 250px;
+    height: 250px;
+    margin: 0;
+}
+.content{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.content p {
+  font-size: 18px;
+  line-height: normal;
+  color: #021718;
+}
+.content h1 {
+  font-weight: 900;
+  font-size: 28px;
+  line-height: normal;
+  color: #021718;
+  margin-top: 30px
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .image > img{
+    width: 300px;
+    height: 300px;
+}
+}
+</style>
+
+{% include 'photo/navbar.html' %}
+
+<div class="container-fluid my-5">
+    <div class="row align-items-center no-gutters">
+
+        <div class="col my-auto image text-center align-self-center">
+            <img src="{% static 'photo/images/photo.png' %}" alt="">
+         </div>
+
+        <div class="col my-auto content align-self-center">
+            <h1>Your customizable gallery.</h1>
+              <p>
+                Create your own gallery with sorting technique. Save them on the cloud So, you could never loose them.
+              </p>
+              <a href="{% url 'login' %}" class="btn btn-dark btn-lg">Login</a>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<script src=https://code.jquery.com/jquery-3.3.1.slim.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+<script src=https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js></script>
+</body>
+</html>
