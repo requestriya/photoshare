@@ -12,6 +12,7 @@
 <body>
 
 <style>
+ 
     body{
         background: #6DA2F2;
     }
@@ -29,6 +30,9 @@
   font-size: 24px;
   line-height: 42px;
   color: #021718;
+}
+.image > img{
+  border: 4px solid black;
 }
 @media only screen and (max-width: 767px){
 .container-fluid{
@@ -67,10 +71,10 @@
 {% include 'photo/navbar.html' %}
 
 <div class="container-fluid my-5">
-    <div class="row align-items-center no-gutters">
+    <div class="row align-items-center">
 
-        <div class="col my-auto image text-center align-self-center">
-            <img src="{% static 'photo/images/photo.png' %}" alt="">
+        <div class="col my-auto image text-center align-self-center mt-5">
+            <img src="{% static 'photo/images/photo.png' %}" alt="" class="mt-5">
          </div>
 
         <div class="col my-auto content align-self-center">
